@@ -15,7 +15,7 @@ import java.util.Properties;
 
 
 public class MainActivity extends AppCompatActivity {
-    JSch current = new JSch();
+
     //File file
 
     @Override
@@ -53,18 +53,38 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ButtonClickedActivity.class);
         Intent intentThrown = new Intent(this, ExceptionThrown.class);
 
+
+
         String user = "guest";
         String host = "192.168.2.57";
+        JSch.setConfig("StrictHostKetChecking", "no");
+        JSch current = new JSch();
+
+        current.addIdentity("C:\\Users\\shirl\\.ssh\\id_rsa");
+
+        Properties prop = new Properties();
+        prop.put("StrictHostKeyChecking", "no");
+
+        //current.setKnownHosts();
+        Session session = current.getSession(user, host);
+        session.setConfig(prop);
+
+
         try {
-            Session session = current.getSession(user, host);
-            Properties prop = new Properties();
+
+
+//            Properties prop = new Properties();
 //            prop.put("StrictHostKeyChecking", "no");
 //            session.setConfig(prop);
-//            System.out.println("it clicked");
-            startActivity(intent);
+            session.connect();
             ChannelExec channelSsh = (ChannelExec)session.openChannel("exec");
+
+            System.out.println("it clicked");
+            startActivity(intent);
+
             channelSsh.setCommand("ls");
             channelSsh.connect(5000);
+            channelSsh.disconnect();
 //            Context context = getApplicationContext();
 //            CharSequence text = "It Worked!";
 //            int duration = Toast.LENGTH_SHORT;
