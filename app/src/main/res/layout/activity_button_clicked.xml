@@ -7,17 +7,26 @@
     tools:context=".ButtonClickedActivity">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/cmdOut"
         android:layout_width="150dp"
         android:layout_height="101dp"
         android:layout_marginTop="160dp"
-        android:text="It worked"
+        android:text="Command Output"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.275"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.242"
-        tools:text="It worked" />
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/sndCommand"
+        android:layout_width="131dp"
+        android:layout_height="88dp"
+        android:text="Send Command"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.758"
+        tools:layout_editor_absoluteX="130dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

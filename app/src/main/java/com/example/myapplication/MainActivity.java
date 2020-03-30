@@ -12,18 +12,21 @@ import android.widget.*;
 import android.app.Activity;
 
 import java.io.*;
+
 import java.util.Properties;
 
 
 public class MainActivity extends AppCompatActivity {
 
     //File file
+    TextView txt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Context context = getApplicationContext();
+        txt =(TextView) findViewById(R.id.cmdOut);
 
         Button Pi_One = (Button) findViewById(R.id.Pi_1);
         Pi_One.setOnClickListener(new View.OnClickListener() {
@@ -62,20 +65,11 @@ public class MainActivity extends AppCompatActivity {
         Properties config = new Properties();
         config.put("StrictHostKeyChecking", "no");
 
-
-
-
-
         String user = "guest";
         String host = "192.168.2.57";
         //create new JsCh object
         JSch current = new JSch();
-//        System.out.println(new File("file:\\src\\.ssh\\id_rsa").exists());
-        //current.addIdentity("C:\\Users\\shirl\\.ssh\\id_rsa");
 
-
-
-        //current.setKnownHosts();
         Session session = current.getSession(user, host);
         session.setConfig(config);
         session.setPassword("guest");
@@ -86,15 +80,38 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-            session.connect();
+            session.connect(5000);
             ChannelExec channelSsh = (ChannelExec)session.openChannel("exec");
+            System.out.print("Channel Made");
+            final ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            channelSsh.setOutputStream(baos);
+            channelSsh.setCommand("ls -a");
+            channelSsh.connect(5000);
+            try{ Thread.sleep(1000); } catch(Exception ee) {}
+            String result = new String(baos.toByteArray());
 
-            startActivity(intent);
+
+
+
+
+
 
             //simple command to test
-            channelSsh.setCommand("ls");
-            channelSsh.connect(5000);
+
+
+
+            System.out.println("CommandSent");
+
+
+
+
+            System.out.println("byteCreated");
+
             channelSsh.disconnect();
+
+            System.out.println(result);
+            txt.setText("Please Work");
+            startActivity(intent);
 
         }
         catch(Exception e) {
@@ -107,9 +124,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-//    protected String getPrivateKey() {
-//        InputStream inputStream = getAssets().open("id_rsa");
-//    }
+    protected String getPrivateKey() throws IOException {
+        InputStream inputStream = getAssets().open("id_rsa");
+        return "hello";
+
+    }
 }
 
 
