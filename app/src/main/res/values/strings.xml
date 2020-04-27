@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="pi3">Pi3</string>
+    <string name="send_command">Send Command</string>
 </resources>

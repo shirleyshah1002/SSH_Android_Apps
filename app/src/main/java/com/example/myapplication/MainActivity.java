@@ -1,7 +1,8 @@
 package com.example.myapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
+
 import com.jcraft.jsch.*;
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     //File file
     TextView txt;
+    Button sendCommand;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Context context = getApplicationContext();
         txt =(TextView) findViewById(R.id.cmdOut);
+        //txt.setText("wow please work");
 
         Button Pi_One = (Button) findViewById(R.id.Pi_1);
         Pi_One.setOnClickListener(new View.OnClickListener() {
@@ -60,8 +63,8 @@ public class MainActivity extends AppCompatActivity {
      */
     protected void onClickOne () throws JSchException {
     //set up my different intents for the two different outcomes
-        Intent intent = new Intent(this, ButtonClickedActivity.class);
-        Intent intentThrown = new Intent(this, ExceptionThrown.class);
+        Intent intent = new Intent(getBaseContext(), ButtonClickedActivity.class);
+        Intent intentThrown = new Intent(getBaseContext(), ExceptionThrown.class);
         Properties config = new Properties();
         config.put("StrictHostKeyChecking", "no");
 
@@ -76,9 +79,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
         try {
-
-
 
             session.connect(5000);
             ChannelExec channelSsh = (ChannelExec)session.openChannel("exec");
@@ -90,36 +92,26 @@ public class MainActivity extends AppCompatActivity {
             try{ Thread.sleep(1000); } catch(Exception ee) {}
             String result = new String(baos.toByteArray());
 
-
-
-
-
-
-
-            //simple command to test
-
-
-
             System.out.println("CommandSent");
-
-
-
 
             System.out.println("byteCreated");
 
             channelSsh.disconnect();
 
             System.out.println(result);
-            txt.setText("Please Work");
+            intent.putExtra("results", result);
             startActivity(intent);
+
+
 
         }
         catch(Exception e) {
 
             startActivity(intentThrown);
+            System.out.println("The connection failed");
             e.printStackTrace();
-
         }
+        //txt.setText("Please Work");
 
     }
 
