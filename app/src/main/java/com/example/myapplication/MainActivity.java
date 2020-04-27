@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     //File file
     TextView txt;
-    Button sendCommand;
+    Button sendCommand; //ch
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
