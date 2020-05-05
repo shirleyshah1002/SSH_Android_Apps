@@ -2,4 +2,8 @@
     <string name="app_name">My Application</string>
     <string name="pi3">Pi3</string>
     <string name="send_command">Send Command</string>
+    <string name="title_activity_new_pi">NewPI</string>
+    <string name="pi_1">Pi 1</string>
+    <string name="add_pi">Add Pi</string>
+    <string name="pi2">pi2</string>
 </resources>

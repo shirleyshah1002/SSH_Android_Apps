@@ -8,17 +8,19 @@
 
     <TextView
         android:id="@+id/cmdOut"
-        android:layout_width="197dp"
-        android:layout_height="128dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="160dp"
         android:text="Command Output"
-        android:textSize="30sp"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:typeface="monospace"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.021" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/sndCommand"
@@ -26,23 +28,28 @@
         android:layout_height="88dp"
         android:layout_marginStart="128dp"
         android:layout_marginLeft="128dp"
-        android:text="@string/send_command"
         android:onClick="changeText"
+        android:text="@string/send_command"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.741" />
+        app:layout_constraintVertical_bias="0.874" />
 
     <EditText
+        android:id="@+id/cmdSender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="52dp"
         android:layout_marginRight="52dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/send_command"
+        android:hint="send command"
 
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="361dp" />
+        app:layout_constraintHorizontal_bias="0.602"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.553" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

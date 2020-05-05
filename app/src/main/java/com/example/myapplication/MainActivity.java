@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     //File file
     TextView txt;
     Button sendCommand; //ch
+    Button newPi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +31,14 @@ public class MainActivity extends AppCompatActivity {
         Context context = getApplicationContext();
         txt =(TextView) findViewById(R.id.cmdOut);
         //txt.setText("wow please work");
+        final Button newPi = (Button) findViewById(R.id.add_pi);
+        newPi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), newPi.class);
+                startActivity(intent);
+            }
+        });
 
         Button Pi_One = (Button) findViewById(R.id.Pi_1);
         Pi_One.setOnClickListener(new View.OnClickListener() {

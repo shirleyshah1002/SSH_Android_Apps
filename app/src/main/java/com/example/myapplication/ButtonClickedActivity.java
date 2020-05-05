@@ -7,10 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import com.jcraft.jsch.*;
 
 public class ButtonClickedActivity extends AppCompatActivity {
     TextView text;
     Button commandSnd;
+    JSch current;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +28,12 @@ public class ButtonClickedActivity extends AppCompatActivity {
         String a = intent.getExtras().getString("results");
 
         text.setText(a);
+    }
+
+    public void sendCommand(String command) {
+
+
+
     }
 }
 
