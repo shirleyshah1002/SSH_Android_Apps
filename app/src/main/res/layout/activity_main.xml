@@ -13,34 +13,31 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <Button
-            android:id="@+id/Pi_1"
-            android:layout_width="match_parent"
-            android:layout_height="63dp"
-            android:text="@string/pi_1" />
+        <RadioGroup
+            android:id="@+id/piGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="184dp">
 
-        <Button
-            android:id="@+id/Pi2"
-            android:layout_width="match_parent"
-            android:layout_height="72dp"
-            android:text="@string/pi2" />
-
-        <Button
-            android:id="@+id/Pi_3"
-            android:layout_width="match_parent"
-            android:layout_height="74dp"
-            android:text="@string/pi3" />
+        </RadioGroup>
 
         <Button
             android:id="@+id/add_pi"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="475dp"
+            android:layout_height="68dp"
+            android:layout_marginTop="0dp"
             android:layout_marginEnd="0dp"
             android:layout_marginRight="0dp"
             android:text="@string/add_pi"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/restart"
+            android:layout_width="wrap_content"
+            android:layout_height="72dp"
+            android:text="Refresh"
+            android:visibility="visible" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.myapplication">
+    package="com.example.RaspberryPiController">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -12,10 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".newPi"></activity>
-        <activity android:name=".ExceptionThrown" />
-        <activity android:name=".ButtonClickedActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name="com.example.RaspberryPiController.EditPi"></activity>
+        <activity android:name="com.example.RaspberryPiController.PiListReal" />
+        <activity android:name="com.example.RaspberryPiController.newPi" />
+        <activity android:name="com.example.RaspberryPiController.ExceptionThrown" />
+        <activity android:name="com.example.RaspberryPiController.ButtonClickedActivity" />
+        <activity android:name="com.example.RaspberryPiController.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

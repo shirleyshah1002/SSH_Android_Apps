@@ -19,7 +19,16 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:ems="10"
-            android:hint="Name of Pi"
+            android:hint="@string/name_of_pi"
+            android:inputType="textPersonName"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="userToLogin"
             android:inputType="textPersonName" />
 
         <EditText
@@ -27,15 +36,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="xxx.xxx.x.xx"
-            android:inputType="textPersonName" />
+            android:hint="@string/xxx_xxx_x_xx"
+            android:inputType="textPersonName"
+            android:autofillHints="" />
 
         <EditText
             android:id="@+id/piPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:autofillHints="" />
 
         <Button
             android:id="@+id/add_pi"
@@ -43,5 +54,20 @@
             android:layout_height="wrap_content"
             android:layout_margin="100dp"
             android:text="Submit" />
+
+        <Button
+            android:id="@+id/piList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pi List" />
+
+        <ImageButton
+            android:id="@+id/home"
+            android:layout_width="89dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_action_name"
+            android:onClick= "goHome"/>
+
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

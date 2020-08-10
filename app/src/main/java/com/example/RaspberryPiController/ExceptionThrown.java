@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.RaspberryPiController;
 
 import androidx.appcompat.app.AppCompatActivity;
 

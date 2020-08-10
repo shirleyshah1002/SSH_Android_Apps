@@ -1,6 +1,5 @@
-package com.example.myapplication;
+package com.example.RaspberryPiController;
 import java.util.HashMap;
-import java.util.Map;
 
 public class Pi {
     private String name;

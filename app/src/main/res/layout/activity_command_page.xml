@@ -26,17 +26,17 @@
         android:id="@+id/sndCommand"
         android:layout_width="131dp"
         android:layout_height="88dp"
-        android:layout_marginStart="128dp"
-        android:layout_marginLeft="128dp"
+        android:layout_marginStart="24dp"
         android:onClick="changeText"
         android:text="@string/send_command"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.874" />
+        app:layout_constraintVertical_bias="0.925" />
 
     <EditText
-        android:id="@+id/cmdSender"
+        android:id="@+id/cmdInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="52dp"
@@ -50,6 +50,30 @@
         app:layout_constraintHorizontal_bias="0.602"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.553" />
+        app:layout_constraintVertical_bias="0.553"
+        android:autofillHints="" />
+
+    <Button
+        android:id="@+id/lastCommands"
+        android:layout_width="134dp"
+        android:layout_height="83dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="48dp"
+        android:text="lastCmds"
+        android:onClick="lastCmdBox"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageButton
+        android:id="@+id/home"
+        android:layout_width="89dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="304dp"
+        android:onClick="goHome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_action_name" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
