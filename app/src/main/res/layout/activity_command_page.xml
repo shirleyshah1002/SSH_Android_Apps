@@ -57,10 +57,10 @@
         android:id="@+id/lastCommands"
         android:layout_width="134dp"
         android:layout_height="83dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="48dp"
-        android:text="lastCmds"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="32dp"
         android:onClick="lastCmdBox"
+        android:text="lastCmds"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
